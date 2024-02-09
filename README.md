@@ -5,7 +5,9 @@
 用法：
 
 ```bash
-bash$ python wubi.py -h
+$ pip install -r requirement.txt
+
+$ python wubi.py -h
 usage: wubi.py [-h] [--wubi_file WUBI_FILE] file_path
 
 汉字拼音和五笔编码查询工具
@@ -18,7 +20,7 @@ options:
   --wubi_file WUBI_FILE
                         五笔编码文件路径，默认为 wubi86.dict
 
-bash$ python wubi.py 百家姓.txt | head
+$ python wubi.py 百家姓.txt | head
 汉字: 赵钱孙李
 拼音: zhao qian sun li
 五笔: fhqi qgt biy sbf
