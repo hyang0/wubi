@@ -3,6 +3,7 @@ from pypinyin import pinyin, Style
 import platform
 import os
 import sys
+from wr_shuangpin import to_double
 
 
 def change_default_encoding():
@@ -43,6 +44,7 @@ def cout(characters):
     """ 输出 """
     py_list = []
     wb_list = []
+    shuangpin_list = []
 
     for char in characters:
         pinyin_result = get_pinyin(char)
@@ -51,8 +53,12 @@ def cout(characters):
         py_list.append(pinyin_result)
         wb_list.append(wubi_result)
 
+    for char in py_list:
+        shuangpin_list.append(to_double(char))
+
     print("汉字:", characters)
     print("拼音:", ' '.join(py_list))
+    print("双拼:", ' '.join(shuangpin_list))
     print("五笔:", ' '.join(wb_list))
     print()
 
